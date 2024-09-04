@@ -122,7 +122,9 @@ class pool extends eqLogic
             if ($pool->getIsEnable() == 1) {
 
                 // log::add('pool', 'debug', $pool->getHumanName());
-
+                log::add('pool', 'debug', print_r($pool->getCmd(null, 'filtrationSurpresseur'),true));
+                log::add('pool', 'debug', print_r($pool->getCmd(null, 'filtrationLavageEtat'),true));
+                log::add('pool', 'debug', print_r($pool->getCmd(null, 'filtrationLavageEtat'),true));
                 if ($pool->getCmd(null, 'filtrationSurpresseur')->execCmd() == 1) {
                     $timeFin = $pool->getCmd(null, 'filtrationTempsRestant')->execCmd();
                     $timeRestant = $timeFin - time();
