@@ -307,7 +307,7 @@ class pool extends eqLogic
 
     /* **********************Methode d'instance************************* */
 
-    public function stopDaemon()
+    public static function stopDaemon()
     {
         // log::add('pool', 'debug', 'stopDaemon() begin');
 
@@ -3664,7 +3664,7 @@ class poolCmd extends cmd
 
             // log::add('pool', 'debug', $this->getHumanName() . ' execute() temperature_water:' . round(jeedom::evaluateExpression($eqLogic->getConfiguration('temperature_water')), 1));
 
-            return round(jeedom::evaluateExpression($eqLogic->getConfiguration('temperature_water')), 1);
+            return (float)round(jeedom::evaluateExpression($eqLogic->getConfiguration('temperature_water')), 1);
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////
